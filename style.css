@@ -1,0 +1,581 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('racecourse.jpg'); /* Replace 'your-background-image.jpg' with your actual image path */
+    background-size: cover;
+    background-position: center;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity and color as needed */
+}
+
+.navbar {
+    padding: 20px 100px 10px;
+    overflow: hidden;
+    color: #fff;
+    min-height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;      /*Navbar position*/
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.navbar .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+.navbar-title {
+    float: left;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+}
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+.navbar-title .logo {
+    color: white;
+    font-weight: bold;
+}
+.navbar-title .league {
+    color: white;
+}
+.navbar-links a {
+    float: left;
+    color: #787f84;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.navbar-links a:hover {
+    color: white;
+    background-color: #222D35;
+    border-radius: 10px;
+}
+.navbar-contact {
+    float: right;
+}
+.navbar-contact button {
+    background-color: yellow;
+    color: black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.navbar-icons {
+    display: inline-block;
+    margin-right: 20px;
+}
+.navbar-icons img {
+    height: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* ..................................................... NOTIFICATION BAR STYLING  ..............................................*/
+
+
+.notification-bar {
+    display: flex;
+    background-color: black;
+    color: #787A7B;
+    padding: 8px;
+    justify-content: space-between;
+    margin: 80px;
+}
+.notification-content {
+    display: flex;
+    align-items: center;
+}
+.notification-bar p {
+    margin: 0;
+    margin-right: 20px; /* Added margin to separate button and text */
+    font-size:medium;
+}
+.notification-bar button {
+    background-color: #434649;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-left: 15px;
+    font-weight: 500;
+    padding: 6px 6px;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+}
+
+.notification-bar .arrow-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    margin-right: 0;
+}
+
+/*......................................................MIDDLE CONTENT...................................................*/
+
+.banner {
+    padding: 50px;
+    text-align: center; /* Align content in the center */
+    align-items: center;
+    
+}
+
+.date {
+    font-size: 30px;
+    margin-bottom: 0px; /* Added space between text and lines */
+    position: relative;
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.date::before, .date::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 20px); /* Adjusted width to account for gap */
+    border-top: 1px solid white;
+}
+
+.date::before {
+    top: 0;
+    left: 0; /* Positioned at the left edge */
+    width: 100%;
+    
+}
+
+.date::after {
+    bottom: 0;
+    left: 0; /* Positioned at the left edge */
+    width: 100%;
+    
+}
+
+.content {
+    font-size : 350%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family:'Times New Roman', Times, serif;
+
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.book-now{
+    background-color: yellow;
+}
+
+.live-match{
+    background-color:transparent;
+    color: white;
+    border:1px solid white;
+}
+
+/* ...........................................SECOND-CONTAINER(STYLING)...................................................... */
+
+.second-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Enable horizontal scrolling */
+  }
+  
+  .card {
+    transition: 0.3s;
+    width: 25%; /* Adjusted width for responsive layout */
+    margin: 15px;
+    height: 5%;
+  }
+  
+  /*.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }*/
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (divide 9 by 16 = 0.5625) */
+    background-image: url('hpsi.png'); /* Set your custom image as the background */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the iframe completely */
+  }
+  
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hide the video */
+    pointer-events: none; /* Make the video not clickable */
+  }
+  .video.active {
+    opacity: 1; /* Make the video visible when it's active */
+    pointer-events: auto; /* Enable click events on the video */
+  }
+  /*.text {
+    padding: 10px;
+    text-align: center;
+    border: none;
+    color: #797979;
+  }*/
+  
+  .dot-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer; /* Add cursor pointer */
+  }
+  
+  .active-dot {
+    background-color: #333;
+  }
+
+  /* ..........................................THIRD-CONTAINER STYLING..................................................*/
+
+  .block{
+    margin: 0;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 70px;
+
+}
+
+/* Main third-container styling */
+.third-container {
+    border-radius: 20px;
+    background-color:#0B0E12;
+    color: white;
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+
+.heading {
+    font-size:30px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.flex-container {
+    display: flex;
+}
+  
+.flex-container > div {
+    margin: 0px 10px 10px 10px;
+    padding: 0px 20px 20px 20px;
+    font-size: 25px;
+}
+/* Image styling */
+.third-container img {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 500px;
+    height: 300px;
+    padding: 180px 20px 20px 20px;
+}
+
+.content1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight:lighter;
+    color: #797979;
+}
+
+/* .............................................FOURTH-CONTAINER STYLING..........................................*/
+
+
+.fourth-container {
+    transition: 0.3s;
+    margin: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    
+}
+
+.four-container{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    border-radius: 20px; 
+    padding-bottom: 46.25%; /* 16:9 aspect ratio (divide 9 by 16 = 0.5625) */
+    
+}
+
+.four {
+    padding-bottom: 0px;
+}
+
+
+.live {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    object-fit: cover; 
+}
+
+.livevideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    opacity: 0; /* Initially hide the video */
+    pointer-events: none; /* Make the video not clickable */
+}
+
+.livevideo.active {
+    opacity: 1; /* Make the video visible when it's active */
+    pointer-events: auto; /* Enable click events on the video */
+}
+
+
+/* ..........................................FIFTH-CONTAINER STYLING..............................................*/
+
+.fifth-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Enable horizontal scrolling */
+  }
+  
+  /* Removed the .card class */
+  
+  .languages-container {
+    transition: 0.3s;
+    width: 25%; /* Adjusted width for responsive layout */
+    margin: 15px;
+    height: 5%;
+  }
+  
+  /*.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }*/
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (divide 9 by 16 = 0.5625) */
+  }
+  
+  .languages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+/* ...............................................SIXTH-CONTAINER STYLING................................................... */
+
+.newsletter-container {
+    display: flex;
+    background-color: black;
+    padding: 60px 20px 20px 20px;
+}
+
+.content2 {
+    padding: 20px;
+    color:#797979;
+    font-size: 20px;
+    text-align: left;
+}
+
+.picture img {
+    width: 80%;
+    height: 100%;
+    float: right;
+}
+
+form {
+    margin-top: 20px;
+    justify-content: space-between;
+    line-height: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input[type=email] {
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #667085;
+    background-color: #11151B;
+    border: none;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.placeholder{
+    width: 400px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.submit{
+    background-color: yellow;
+    width: 60%;
+}
+
+/* .............................................SEVENH-CONTAINER STYLING ................................................*/
+
+.footer {
+    background-color: #FBFCD4;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .first {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 20PX;
+  }
+  
+  .first img {
+    height: 35px;
+    margin-right: 10px;
+    padding-right: 40px;
+  }
+
+.firstcolumn{
+  display: flex;
+  flex-direction: column;
+}
+
+  .foo{
+    float: left;
+    font-size: 1.2em;
+    display: flex;
+  }
+
+  .title{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titletop {
+    color:black;
+    font-weight: bold;
+  }
+
+  .titlebottom{
+    color:black;
+    font-weight: bold;
+  }
+
+  .content4{
+    text-align: left;
+    padding-top: 10px;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #82836F;
+    margin: 0 60px;
+  }
+
+  .second{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 60px 30px; /* Adjust padding */
+  }
+  
+.third {
+    padding: 30px 80px;
+  }
+  
+  .column {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+  }
+  
+  .column:nth-child(1) {
+    width: 23%; /* First column takes 30% */
+    padding-right: 30px;
+  }
+  
+  .column:nth-child(n+2) {
+    width: 20%; /* Other columns take 20% each */
+  }
+  
+  .heading1 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .rows div {
+    margin-bottom: 5px;
+    margin-top: 0;
+    align-self: flex-start;
+  }
+
+  .column .rows div:not(:first-child) {
+    margin-top: 10px; /* Set margin-top for all rows except the first one */
+  }
+  
+  .left {
+    float: left;
+  }
+  
+  .right {
+    float: right;
+    text-decoration:none;
+  } 
